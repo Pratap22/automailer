@@ -1,0 +1,85 @@
+﻿<!-- Javascript goes in the document HEAD -->
+<script type="text/javascript">
+    function altRows(id) {
+        if (document.getElementsByTagName) {
+
+            var table = document.getElementById(id);
+            var rows = table.getElementsByTagName("tr");
+
+            for (i = 0; i < rows.length; i++) {
+                if (i % 2 == 0) {
+                    rows[i].className = "evenrowcolor";
+                } else {
+                    rows[i].className = "oddrowcolor";
+                }
+            }
+        }
+    }
+    window.onload = function () {
+        altRows('alternatecolor');
+    }
+</script>
+<html>
+<head>
+<!-- CSS goes in the document HEAD or added to your external stylesheet -->
+<style type="text/css">
+table.altrowstable {
+	font-family: Times New Roman;
+	font-size:15px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #a9c6c9;
+	border-collapse: collapse;
+}
+table.altrowstable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+table.altrowstable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #a9c6c9;
+}
+.oddrowcolor{
+	background-color:#d4e3e5;
+}
+.evenrowcolor{
+	background-color:#c3dde0;
+}
+</style>
+</head>
+<!-- Table goes in the document BODY -->
+
+<body>
+<p>
+Dear ~personName~,
+</p>
+
+<p>This is in reference to an outstanding amount of INR ~invoiceAmt~  that ~custName~ owes to ~clientName~</p>
+
+<p>To introduce ourselves, we are ATS Services Private Limited, a company specialized into Corporate Receivables Management. The above case has been assigned to us for resolution and we wish to do this amicably with your support. The supporting files with respect to this outstanding amount are enclosed for your reference.</p>
+<p>HILTI has informed us that your company owes an amount of INR ~invoiceAmt~  (See Below for Invoice wise Breakup) to them. We have been asked to ascertain from you if the above information is accurate and to resolve this outstanding amount.</p>
+<p>We propose to have discussions with you in this matter with the purpose of facilitating a resolution. We will appreciate if you can give us the name and contact details of concerned person in your company with whom we can discuss on this matter. In case the matter is to be discussed with you we request that you acknowledge receiving this communication and let us know a suitable time to call you.</p>
+<p>Below are the invoices breakup:</p>
+
+~table~
+
+<p>Bank Account Details for NEFT/RTGS only: <br />
+~clientName~ <br />
+Bank A/c No. - ~accountNo~ <br />
+Bank Name – CITI Bank, Parliament Street, New Delhi – 110001 <br />
+IFSC Code - CITI0000002, MICR Code – 110037002<br />
+<b>Note : Our bank account number is alphanumeric</b></p>
+
+<p>In case of any query please feel free to contact the undersigned.</p>
+
+<p>Regards, </p>
+<p>~SIGN~</p>
+
+<br />
+<p>Disclaimer: ATS Services does not assume any responsibility for any errors, inaccuracies or omissions in any information or data set forth in the contents of the Service. In no event shall ATS Services be liable for any special, direct, indirect, consequential or incidental damages or any damages whatsoever, whether in action of contract, negligence or other tort, arising out of or in connection with the use of the Service or the contents of the Service</p>
+</body>
+</html>
